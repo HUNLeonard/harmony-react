@@ -10,7 +10,7 @@ const MobilNavbar = () => {
       className={cn("md:hidden",
         "relative grid place-content-center rounded-4xl",
         "transition-colors duration-200 bg-primary cursor-pointer",
-        "px-6 py-1 border overflow-hidden",
+        "px-6 py-1 border overflow-hidden max-h-[calc(var(--header-height)*0.7)]",
         "text-lg after:text-lg",
         "after:bg-gray-dark after:h-full after:absolute after:transition-all after:duration-400 after:ease-in-out",
         "after:w-full after:-top-0 after:content-['Close'] after:text-white",

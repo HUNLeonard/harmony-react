@@ -13,10 +13,11 @@ const LinkLister = ({ links, className = "" }: LinkListerProps) => {
         <li key={link.name} className={cn(className)}>
           <a href={link.to}
             className={cn('relative',
-              'before:h-1 hover:before:w-[105%] before:w-0',
-              'before:absolute before:top-full before:bg-primary',
-              'inline-block hover:font-bold',
+              'inline-block hover:font-bold active:font-bold',
               'hover:scale-105 transition-all duration-200',
+              'before:h-1 hover:before:w-[105%] before:w-0',
+              "active:before:w-[105%]",
+              'before:absolute before:top-full before:bg-primary',
               'before:transition-all before:duration-200 '
             )}
           >

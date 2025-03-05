@@ -2,7 +2,6 @@ import cn from '../../utils/cn'
 import { useSidebarContext } from '../../hooks/useSidebarContext';
 import { NAVLINKS } from '../../data/navlinks';
 import LinkLister from '../../common/LinkLister';
-import Logo from '../Header/Logo';
 
 const Sidebar = () => {
   const { isSidebarOpen } = useSidebarContext();
@@ -15,14 +14,9 @@ const Sidebar = () => {
         !isSidebarOpen ? "translate-x-full" : "translate-x-0 shadow-[0px_0px_20px_2px_rgba(0,0,0,0.4)]"
       )}
     >
-      <div className='bg-linear-0 from-transparent from-0% to-white/10 w-fit h-fit'>
-        <Logo />
-      </div>
-      <ul className='px-4 divide-y-2 divide-gray-light/10 w-full mx-auto'>
+      <ul className='px-4 divide-y-2 divide-gray-light/10 w-64 mx-auto mt-[calc(var(--header-height))]'>
         <LinkLister links={NAVLINKS} className='w-full text-center  text-gray-light text-lg p-4' />
       </ul>
-
-
     </aside>
   )
 }
