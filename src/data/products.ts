@@ -8,10 +8,10 @@ export const products = [
     lightsOffsrc: "./images/pulse/dark.png",
     lightsOnsrc: "./images/pulse/white.png",
     images: [
-      "https://placehold.co/1200x1200/EEE/31343C?text=1",
-      "https://placehold.co/1200x1200/EEE/31343C?text=2",
-      "https://placehold.co/1200x1200/EEE/31343C?text=3",
-      "https://placehold.co/1200x1200/EEE/31343C?text=4",
+      "./images/pulse/1.png",
+      "./images/pulse/2.png",
+      "./images/pulse/3.png",
+      "./images/pulse/4.png",
     ],
   },
   {
@@ -23,10 +23,10 @@ export const products = [
     lightsOnsrc: "./images/watch/light.png",
     lightsOffsrc: "./images/watch/dark.png",
     images: [
-      "https://placehold.co/1200x1200/EEE/31343C?text=1",
-      "https://placehold.co/1200x1200/EEE/31343C?text=2",
-      "https://placehold.co/1200x1200/EEE/31343C?text=3",
-      "https://placehold.co/1200x1200/EEE/31343C?text=4",
+      "./images/watch/1.png",
+      "./images/watch/2.png",
+      "./images/watch/3.png",
+      "./images/watch/4.png",
     ],
   },
   {
@@ -38,10 +38,10 @@ export const products = [
     lightsOnsrc: "./images/glasses/red.png",
     lightsOffsrc: "./images/glasses/black.png",
     images: [
-      "https://placehold.co/1200x1200/EEE/31343C?text=1",
-      "https://placehold.co/1200x1200/EEE/31343C?text=2",
-      "https://placehold.co/1200x1200/EEE/31343C?text=3",
-      "https://placehold.co/1200x1200/EEE/31343C?text=4",
+      "./images/glasses/1.png",
+      "./images/glasses/2.png",
+      "./images/glasses/3.png",
+      "./images/glasses/4.png",
     ],
   },
 ];

@@ -3,6 +3,7 @@ import Footer from './Footer/Footer'
 import { Outlet } from 'react-router-dom'
 import SidebarProvider from '../context/SidebarProvider'
 import Sidebar from './Sidebar/Sidebar'
+import ProductProvider from '../context/ProductProvider'
 
 const MainLayout = () => {
   return (
@@ -11,7 +12,9 @@ const MainLayout = () => {
         <Header />
         <Sidebar />
       </SidebarProvider>
-      <Outlet />
+      <ProductProvider>
+        <Outlet />
+      </ProductProvider>
       <Footer />
     </>
   )

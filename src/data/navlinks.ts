@@ -10,14 +10,14 @@ export const NAVLINKS: Link[] = [
   },
   {
     name: "About",
-    to: "#About",
+    to: "#about",
   },
   {
     name: "Details",
-    to: "#Details",
+    to: "#details",
   },
   {
     name: "Price",
-    to: "#Price",
+    to: "#price",
   },
 ];

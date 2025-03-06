@@ -1,4 +1,4 @@
-import { HashRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import NoPage from './pages/NoPage'
 import MainLayout from './layouts/MainLayout'
@@ -6,7 +6,7 @@ import ScrollToTop from './react-router-helper/ScrollToTop'
 
 const App = () => {
   return (
-    <HashRouter>
+    <BrowserRouter basename='harmony-react'>
       <ScrollToTop />
       <Routes>
         <Route path='/' element={<MainLayout />}>
@@ -14,7 +14,7 @@ const App = () => {
           <Route path='*' element={<NoPage />} />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 
