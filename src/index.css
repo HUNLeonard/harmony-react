@@ -8,6 +8,9 @@
 :root { 
   font-family: Inter, sans-serif; 
   --header-height: 5rem;
+  --color-regular: rgb(185 46 46);
+  --color-premium: oklch(0.558 0.288 302.321);
+  --color-ultimate: oklch(0.623 0.214 259.815);
 }
 
 @theme {
@@ -28,6 +31,8 @@
   --color-primary: #F4F4F4;
   --color-secondary: #1A1A1A;
   --color-third: #6B7280;
+
+
 
   --color-gray-lightest: #F9FAFB;
   --color-gray-light: #E5E7EB;

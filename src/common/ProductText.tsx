@@ -9,7 +9,7 @@ const ProductText = ({
   text: string,
   children?: React.ReactNode;
 }) => {
-  const descFragments = text.split("\n");
+  const descFragments = (text || "").split("\n");
 
   return (
     <>

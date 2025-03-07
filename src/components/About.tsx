@@ -3,8 +3,8 @@ import cn from '../utils/cn'
 import { products } from '../data/products';
 import HeroImg from './HeroImg';
 import ProductText from '../common/ProductText';
-import RightSide from '../common/RightSide';
-import LeftSide from '../common/LeftSide';
+import RightSide from '../common/divider/RightSide';
+import LeftSide from '../common/divider/LeftSide';
 import { useProductContext } from '../hooks/useProductContext';
 
 
@@ -17,7 +17,7 @@ const About = () => {
         <HeroImg product={product} />
       </LeftSide>
       <RightSide className="px-2 xs:px-4 lg:pt-[2%] lg:px-[5%] lg:sticky top-1/12  flex flex-col">
-        <ProductText name={product.name} text={product.firsDesc}>
+        <ProductText name={product.name} text={product.shortDesc}>
           <select
             name="productSelect"
             value={productId}

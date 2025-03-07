@@ -1,5 +1,5 @@
 import React from 'react'
-import cn from '../utils/cn'
+import cn from '../../utils/cn'
 
 const RightSide = ({ children, className = "" }: { children?: React.ReactNode, className?: string }) => {
   return (
