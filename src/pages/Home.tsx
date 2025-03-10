@@ -1,5 +1,6 @@
 import About from "../components/About"
 import AboutMore from "../components/AboutMore"
+import ProductDetails from "../components/Details"
 import Price from "../components/Price"
 
 const Home = () => {
@@ -8,6 +9,8 @@ const Home = () => {
       <About />
       <div className='invisible absolute -mt-20 left-0 right-0 h-1 bg-yellow z-50' id="about"></div>
       <AboutMore />
+      <div className='invisible absolute left-0 right-0 h-1 bg-yellow z-50' id="details"></div>
+      <ProductDetails />
       <div className='invisible absolute left-0 right-0 h-1 bg-yellow z-50' id="price"></div>
       <Price />
     </main>

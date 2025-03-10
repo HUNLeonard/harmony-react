@@ -13,13 +13,20 @@ const HeroImg = ({ product }: { product: Product }) => {
   }, [setLightsOn])
 
   return (
-    <ImgSwitcher img1={product.lightsOffsrc} img2={product.lightsOnsrc} name={product.name} isSwitched={lightsOn} >
-      <ToggleButton value={lightsOn} toggle={toggleLight} />
-      <BoxVerticalFaders />
-      <BoxHorizontalFaders />
-    </ImgSwitcher>
-
+    <>
+      {/* Product image with switcher */}
+      <ImgSwitcher
+        img1={product.lightsOffsrc}
+        img2={product.lightsOnsrc}
+        name={product.name}
+        isSwitched={lightsOn}
+      >
+        <ToggleButton value={lightsOn} toggle={toggleLight} />
+        <BoxVerticalFaders />
+        <BoxHorizontalFaders />
+      </ImgSwitcher>
+    </>
   )
 }
 
-export default HeroImg
+export default HeroImg;

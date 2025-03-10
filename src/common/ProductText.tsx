@@ -1,4 +1,7 @@
 import React from "react";
+import { renderHighlightedText } from "../utils/renderHighlightedText";
+import cn from "../utils/cn";
+import { ChevronDown } from "lucide-react";
 
 const ProductText = ({
   name,
@@ -13,21 +16,33 @@ const ProductText = ({
 
   return (
     <>
-      <h1 className="shrink-0 text-[2.5rem] sm:text-5xl lg:text-[clamp(12px,6vh,48px)] font-garamond font-extrabold line-clamp-2 ">
+      <h1 className={cn("shrink-0 text-[2.5rem] sm:text-5xl lg:text-[clamp(12px,6vh,48px)] ",
+        "font-garamond font-extrabold line-clamp-2 tracking-tight",
+        "bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-900 ")}>
         {name}
       </h1>
       {children}
 
-      <div className="space-y-4 p-4 bg-gray-light rounded-2xl h-auto overflow-y-auto fancy-scrollbar">
-        {descFragments.map((frag) => (
+      <div className={cn("space-y-4 p-6 bg-gradient-to-br from-gray-lightest to-gray-light shadow",
+        " rounded-2xl h-auto overflow-y-auto fancy-scrollbar border border-gray-light/50 relative")}>
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600"></div>
+        {descFragments.map((frag, index) => (
           <p
-            key={frag}
-            className="whitespace-pre-line lg:text-[clamp(12px,3vh,24px)]"
+            key={index}
+            className="whitespace-pre-line lg:text-[clamp(12px,3vh,24px)] cursor-default"
           >
-            {frag}
+            {renderHighlightedText(frag)}
           </p>
         ))}
-
+        <div className="pt-4 flex justify-end">
+          <a
+            href="#details"
+            className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-800 font-medium transition-colors duration-200"
+          >
+            Learn more
+            <ChevronDown size={16} className="animate-bounce" />
+          </a>
+        </div>
       </div>
     </>
   );

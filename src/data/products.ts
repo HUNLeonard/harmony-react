@@ -38,6 +38,38 @@ export const products = [
         "Premium <b>carrying case</b> with wireless charging",
       ],
     },
+    sections: [
+      {
+        title: "Premium Sound Quality",
+        text: "Experience studio-grade audio with our graphene-enhanced drivers that deliver crisp highs and deep bass for an immersive listening experience. Our proprietary acoustic architecture ensures balanced sound across all frequencies.",
+        image: "./images/pulse/1.png",
+      },
+      {
+        title: "Active Noise Cancellation",
+        text: "Block out distractions with our advanced ANC technology that adapts to your environment in real-time. Multiple microphones analyze ambient sound and create inverse sound waves to cancel noise, letting you focus on what matters.",
+        image: "./images/pulse/2.png",
+      },
+      {
+        title: "Ergonomic Design",
+        text: "Crafted for comfort during extended use, the PULSE Pro features a streamlined design that sits securely in your ear without causing fatigue. Multiple ear tip sizes ensure a perfect fit for any ear shape.",
+        image: "./images/pulse/3.png",
+      },
+      {
+        title: "All-Day Battery Life",
+        text: "Enjoy up to 10 hours of continuous playback on a single charge, with the charging case providing an additional 30 hours. Quick charge technology gives you 1 hour of playback from just 5 minutes of charging.",
+        image: "./images/pulse/4.png",
+      },
+      {
+        title: "Water and Dust Resistant",
+        text: "IP67-rated protection ensures your earbuds can handle workouts, rain, and everyday accidents. Take them anywhere without worry - from dusty trails to rainy commutes.",
+        image: "./images/pulse/1.png",
+      },
+      {
+        title: "Seamless Connectivity",
+        text: "Bluetooth 6.0 provides a stable, low-latency connection with your devices, ensuring your audio stays crystal clear without interruptions. Multipoint connectivity lets you switch seamlessly between devices.",
+        image: "./images/pulse/2.png",
+      },
+    ],
   },
   {
     name: "AEGIS X1 Titanium Smartwatch",
@@ -78,6 +110,38 @@ export const products = [
         "<b>Solar-charged quantum battery</b> lasting 30 days",
       ],
     },
+    sections: [
+      {
+        title: "Aerospace-Grade Titanium",
+        text: "Constructed from the same grade of titanium used in spacecraft, the AEGIS X1 combines lightweight durability with elegant design. This premium material ensures your watch can withstand extreme conditions while maintaining its sophisticated appearance.",
+        image: "./images/watch/1.png",
+      },
+      {
+        title: "Advanced Health Monitoring",
+        text: "Monitor over 100 health metrics with medical-grade precision. From heart rate variability and blood oxygen saturation to sleep quality and stress levels, the AEGIS X1 provides comprehensive health insights around the clock.",
+        image: "./images/watch/2.png",
+      },
+      {
+        title: "Dual-Layer AMOLED Display",
+        text: "Our innovative dual-layer display combines always-on functionality with vibrant colors and perfect blacks. The screen automatically adjusts to environmental conditions, ensuring optimal visibility whether you're in bright sunlight or complete darkness.",
+        image: "./images/watch/3.png",
+      },
+      {
+        title: "Solar Quantum Battery",
+        text: "Revolutionary battery technology harnesses solar energy to extend battery life up to 30 days on a single charge. Even with all sensors active, you'll get weeks of use without needing to recharge.",
+        image: "./images/watch/4.png",
+      },
+      {
+        title: "Military-Grade Durability",
+        text: "Tested to meet military standards for shock, temperature, pressure, and electromagnetic resistance. With 100M water resistance, you can wear your AEGIS X1 while swimming, diving, or in extreme weather conditions.",
+        image: "./images/watch/1.png",
+      },
+      {
+        title: "Satellite Emergency SOS",
+        text: "When you're off the grid, the AEGIS X1's satellite connectivity can be a lifesaver. Send emergency messages, share your precise location, and access emergency services anywhere in the world, even without cellular coverage.",
+        image: "./images/watch/2.png",
+      },
+    ],
   },
   {
     name: "Harmony Vision Smart Glasses",
@@ -118,6 +182,38 @@ export const products = [
         "Full <b>smart home integration</b> and control capabilities",
       ],
     },
+    sections: [
+      {
+        title: "Seamless AR Integration",
+        text: "Experience augmented reality that enhances rather than distracts. Our transparent OLED display overlays digital information onto your real-world view with perfect clarity and minimal intrusion.",
+        image: "./images/glasses/1.png",
+      },
+      {
+        title: "Stylish Everyday Design",
+        text: "Designed to be worn all day, Harmony Vision glasses feature a sleek, contemporary aesthetic that works for any occasion. No one will know they're smart glasses unless you tell them.",
+        image: "./images/glasses/2.png",
+      },
+      {
+        title: "Lightweight Titanium Frame",
+        text: "Constructed from aerospace-grade titanium, these glasses weigh just 36 grams. The hypoallergenic material and balanced weight distribution ensure comfort during extended wear.",
+        image: "./images/glasses/3.png",
+      },
+      {
+        title: "Adaptive Light Control",
+        text: "Smart electrochromic lenses automatically adjust tint based on ambient light conditions. From bright sunlight to dim interiors, your vision remains optimized without manual adjustments.",
+        image: "./images/glasses/4.png",
+      },
+      {
+        title: "Voice Command System",
+        text: "Control your glasses with natural voice commands. The advanced microphone array isolates your voice even in noisy environments, making hands-free operation reliable and intuitive.",
+        image: "./images/glasses/1.png",
+      },
+      {
+        title: "Real-Time Translation",
+        text: "Break language barriers with instant translation of 40+ languages. The glasses can translate conversations in real-time, displaying subtitles in your field of view as people speak.",
+        image: "./images/glasses/2.png",
+      },
+    ],
   },
 ];
 
