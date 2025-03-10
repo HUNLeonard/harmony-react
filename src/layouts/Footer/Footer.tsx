@@ -1,67 +1,150 @@
-import cn from "../../utils/cn"
+import { useState } from "react";
+import { Send, ArrowUp, Instagram, Facebook, Twitter, Youtube, Mail } from "lucide-react";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle newsletter subscription
+    setEmail("");
+    alert("Thanks for subscribing!");
+  };
+
   return (
-    <footer className="bg-[#1E2631] text-gray-300">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 pt-8">
-        <div>
-          <h4 className="font-bold mb-4 text-white"><a href="#">HARMONY</a></h4>
-          <p className="text-sm">Immersive sound. Minimalist design.</p>
-        </div>
+    <footer className="relative bg-gradient-to-b from-gray-darkest to-[#111] text-gray-300 overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
+        <div className="absolute -top-24 -left-24 w-64 h-64 bg-blue-600/30 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-900/30 rounded-full blur-3xl"></div>
+      </div>
 
-        <div>
-          <h5 className="font-semibold mb-3 text-white">Products</h5>
-          <ul className="space-y-2">
-            <li className="hover:text-white transition-colors cursor-pointer">Speakers</li>
-            <li className="hover:text-white transition-colors cursor-pointer">Headphones</li>
-            <li className="hover:text-white transition-colors cursor-pointer">Accessories</li>
-          </ul>
-        </div>
 
-        <div>
-          <h5 className="font-semibold mb-3 text-white">Support</h5>
-          <ul className="space-y-2">
-            <li className="hover:text-white transition-colors cursor-pointer">Contact</li>
-            <li className="hover:text-white transition-colors cursor-pointer">FAQs</li>
-            <li className="hover:text-white transition-colors cursor-pointer">Warranty</li>
-          </ul>
-        </div>
-
-        <div>
-          <h5 className="font-semibold mb-3 text-white">Connect</h5>
-          <div className="flex space-x-4">
-            <span className="text-gray-400 hover:text-white cursor-pointer">
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z" />
-              </svg>
-            </span>
-            <span className="text-gray-400 hover:text-white cursor-pointer">
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
-              </svg>
-            </span>
-            <span className="text-gray-400 hover:text-white cursor-pointer">
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" />
-              </svg>
-            </span>
+      {/* Main footer content */}
+      <div className="relative container mx-auto px-4">
+        {/* Logo and info */}
+        <div className="flex flex-col md:flex-row justify-between items-start pt-6 pb-12 border-b border-gray-800">
+          <div className="mb-8 md:mb-0 max-w-sm">
+            <div className="flex items-center gap-2 mb-4">
+              <img src="./harmony.svg" alt="Logo" className="h-12" />
+              <h2 className="font-garamond text-2xl font-bold text-white tracking-wide">
+                HARMONY
+              </h2>
+            </div>
+            <p className="text-sm text-gray-400 mb-4">
+              Elevating your audio experience with cutting-edge technology and minimalist design that harmonizes with your lifestyle.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <Instagram size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <Facebook size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <Twitter size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <Youtube size={20} />
+              </a>
+            </div>
           </div>
-          <div className="mt-4 text-sm">
 
+          {/* Quick links section */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 w-full md:w-auto">
+            <div>
+              <h3 className="font-semibold text-white mb-4 relative">
+                Products
+                <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-blue-600"></span>
+              </h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block">Earbuds</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block">Smartwatches</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block">Smart Glasses</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block">Accessories</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-white mb-4 relative">
+                Support
+                <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-blue-600"></span>
+              </h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block">Help Center</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block">Contact Us</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block">Warranty</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block">Returns</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-white mb-4 relative">
+                Company
+                <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-blue-600"></span>
+              </h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block">About Us</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block">Careers</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block">Press</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block">Blog</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Newsletter */}
+        <div className="py-8 border-b border-gray-800">
+          <div className="max-w-lg mx-auto">
+            <h3 className="font-semibold text-white text-center mb-2">Stay Connected</h3>
+            <p className="text-sm text-gray-400 text-center mb-4">Subscribe to our newsletter for exclusive offers and updates</p>
+            <form onSubmit={handleSubmit} className="flex">
+              <div className="relative flex-grow">
+                <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your email address"
+                  className="w-full pl-10 pr-4 py-3 bg-gray-900 border border-gray-700 rounded-l-lg focus:outline-none focus:border-blue-600 text-gray-300 placeholder-gray-500"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-r-lg transition-colors duration-200 flex items-center"
+              >
+                <Send size={16} className="mr-2" />
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* Bottom footer */}
+        <div className="py-6 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-sm text-gray-500 mb-4 md:mb-0">
+            &copy; {new Date().getFullYear()} Harmony. All Rights Reserved.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
+            <a href="#" className="hover:text-gray-300 transition-colors duration-200">Privacy Policy</a>
+            <a href="#" className="hover:text-gray-300 transition-colors duration-200">Terms of Service</a>
+            <a href="#" className="hover:text-gray-300 transition-colors duration-200">Cookie Policy</a>
+            <p>Design by Attila</p>
           </div>
         </div>
       </div>
 
-      <div className={cn("container mx-auto px-4 mt-8 pt-4 border-t border-gray-700 ",
-        "text-center flex justify-center md:justify-between items-center pb-4",
-        "flex-wrap ")}>
-        <p>&copy; 2025 Harmony. All Rights Reserved.</p>
-        <p className="text-sm text-gray-500">
-          Design by Attila | Privacy Policy | Terms of Service
-        </p>
-      </div>
+      {/* Back to top button */}
+      <a
+        href="#"
+        className="fixed bottom-6 right-6 bg-blue-600 text-white p-2 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-200 z-50"
+      >
+        <ArrowUp size={20} />
+      </a>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
