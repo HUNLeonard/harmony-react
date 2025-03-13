@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { useProductContext } from "../hooks/useProductContext";
 import cn from "../utils/cn";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 const Details = () => {
   const { product } = useProductContext();
@@ -13,11 +14,12 @@ const Details = () => {
   const isScrolling = useRef(false);
   const totalSections = product.sections?.length || 0;
 
+  const detailsObserver = useIntersectionObserver({ threshold: 0.1 });
+
   if (!product.sections || product.sections.length === 0) {
     return null;
   }
 
-  // Use effect to add a non-passive wheel event listener to prevent scrolling
   useEffect(() => {
     const preventDefaultScroll = (e: WheelEvent) => {
       if (!allowScroll && isMouseInside) {
@@ -25,7 +27,6 @@ const Details = () => {
       }
     };
 
-    // This is the key fix: adding a non-passive wheel event listener
     window.addEventListener("wheel", preventDefaultScroll, { passive: false });
 
     return () => {
@@ -40,7 +41,7 @@ const Details = () => {
 
       setTimeout(() => {
         isScrolling.current = false;
-      }, 500); // Match the transition duration
+      }, 500);
     }
   };
 
@@ -55,19 +56,15 @@ const Details = () => {
     }
   };
 
-  // Handle mouse wheel events
   const handleWheel = (e: React.WheelEvent) => {
-    // Handle first and last section differently
     if (
       (currentSection === 0 && e.deltaY < 0) ||
       (currentSection === totalSections - 1 && e.deltaY > 0)
     ) {
-      // Allow normal scrolling when at boundaries
       setAllowScroll(true);
       return;
     }
 
-    // Prevent default for mid-sections
     setAllowScroll(false);
 
     if (!isScrolling.current) {
@@ -89,14 +86,24 @@ const Details = () => {
 
   return (
     <section
-      ref={detailsRef}
+      ref={(el) => {
+        detailsRef.current = el;
+
+      }}
       id="details"
-      className="relative h-screen max-h-[1440px] lg:h-screen bg-gradient-to-b from-gray-light to-gray-dark overflow-hidden mb-0"
+      className={cn(
+        "relative h-screen max-h-[1440px] lg:h-screen ",
+        "bg-gradient-to-b from-gray-light to-gray-dark overflow-hidden mb-0"
+      )}
       onMouseEnter={() => setIsMouseInside(true)}
       onMouseLeave={() => setIsMouseInside(false)}
       onWheel={handleWheel}
     >
-      <div className="relative w-full h-full">
+      <div className={cn("relative w-full h-full",
+        "animate-fade-in-up",
+        detailsObserver.isIntersecting ? 'animated' : '')}
+        ref={el => detailsObserver.setRef(el)}
+      >
         {product.sections.map((section, index) => (
           <div
             key={index}
@@ -138,7 +145,7 @@ const Details = () => {
       </div>
 
       {/* Left side navigation dots */}
-      <div className="absolute left-2 xs:left-6 top-1/4 xs:top-1/2 -translate-y-1/2 z-30 flex flex-col space-y-6">
+      <div className={"absolute left-2 xs:left-6 top-1/4 xs:top-1/2 -translate-y-1/2 z-30 flex flex-col space-y-6"}>
         {product.sections.map((_, index) => (
           <div
             key={index}
